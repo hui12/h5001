@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/animate.min.css" />
+		<style>
+			div{
+			width: 300px;
+			height: 300px;
+			background: pink;
+			margin: 100px auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<input type="button" id="dd" value="go" />
+	</body>
+</html>
+<script type="text/javascript">
+document.querySelector('input[type=button]').onclick=function(){
+	var dd=document.getElementsByTagName('div')[0];
+	dd.classList.add('animated','bounceIn','infinite');
+}
+</script>
