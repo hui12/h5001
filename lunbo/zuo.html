@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">		
+ *{margin:0;padding:0; list-style:none;}
+.main{height:170px; width:490px;margin:60px auto; overflow:hidden;  position: relative; margin:100px auto;}
+.tu{ width:2450px;position:absolute; transition:all 1s; }        
+.tu li{ height:170px; float:left; }        
+.word{position:absolute;right:5px;bottom:10px;}     
+.word li{height:20px; width: 20px; border-radius:50%;background:#ccc;border:solid 1px #666;
+         margin-left:5px;color:#000;float:left;line-height:center;text-align:center;cursor:pointer;}      
+.on{background: rgba(8,91,219,1.00);color:#fff; opacity:0.5;} 
+		</style>
+	</head>
+	<body>
+		<div class="main" id="main">
+            <ul class="tu" id="tu">
+                <li><img src="img/1.jpg"></li>
+                <li><img src="img/2.jpg"></li>
+                <li><img src="img/3.jpg"></li>
+                <li><img src="img/4.jpg"></li>
+                <li><img src="img/5.jpg"></li>
+            </ul >         
+            <ul class="word" id="word">
+                    <li class="on" id="on">1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+            </ul>       
+      </div>
+ </div>
+	</body>
+</html>
+<script type="text/javascript">
+function $(id){ return document.getElementById(id);}
+ window.onload=function(){
+    var wrap=$('main'), pic= $('tu'),  list=$('word').getElementsByTagName('li'),index=0,timer=null;
+       auto();
+       function auto(){
+         timer=setInterval(function(){
+          index++;
+          if(index>=list.length){ index=0;}
+          change(index);
+         },2000);   
+      }
+	 
+     function change(curIndex){
+        pic.style.marginLeft=-490*curIndex+'px';
+        for(var n=0;n<list.length;n++){
+            list[n].className='';
+        }
+          list[curIndex].className='on';
+          index=curIndex;
+       }
+       wrap.onmouseover=function(){
+          clearInterval(timer);
+       }
+       wrap.onmouseout=auto;
+       for(var i=0;i<list.length;i++){
+          list[i].id=i;
+          list[i].onmouseover=function(){
+            change(this.id);          
+          }
+       }
+   }
+</script>

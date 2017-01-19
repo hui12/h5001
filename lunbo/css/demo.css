@@ -1,0 +1,12 @@
+.demo {
+  width: 300px;
+  height: 200px;
+  background: #ffff00 url('../img/4.jpg') no-repeat;
+  border: 10px solid #ffff00;
+}
+.on1 {
+  width: 300px;
+  height: 200px;
+  background: #ff0000 url('../img/4.jpg') no-repeat;
+  border: 10px solid #008000;
+}
